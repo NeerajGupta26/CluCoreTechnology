@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | CluCore Technology</title>
+  <meta name="description" content="Explore CluCore Technology's flagship projects — ISLLATOR (Indian Sign Language real-time translator) and NavigEye (smart GPS-based transit alarm app for Android)."/>
+  <meta name="keywords" content="ISLLATOR Indian Sign Language translator, NavigEye GPS alarm Android, CluCore projects, AI software projects India, computer vision ISL, sign language detection Python YOLO"/>
+  <meta name="author" content="CluCore Technology"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.clucoretechnology.in/projects"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Projects | CluCore Technology"/>
+  <meta property="og:description" content="ISLLATOR translates Indian Sign Language in real-time. NavigEye delivers smart GPS transit alarms on Android."/>
+  <meta property="og:url" content="https://www.clucoretechnology.in/projects"/>
+  <meta property="og:site_name" content="CluCore Technology"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    .page-hero {
+      padding: 9rem 1.5rem 3.5rem; position: relative; overflow: hidden;
+    }
+    .page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero h1 { font-size: clamp(2.2rem,5.5vw,4.5rem); color: #fff; line-height: 1.1; margin-top: .75rem; }
+    .page-hero p { font-size: clamp(.95rem,2vw,1.1rem); color: var(--muted); max-width: 580px; line-height: 1.75; margin-top: 1rem; }
+
+    /* ── Project nav tabs ── */
+    .proj-tabs {
+      display: flex; gap: 0; border-bottom: 1px solid var(--border);
+      max-width: 1280px; margin: 0 auto 0;
+      padding: 0 1.5rem; overflow-x: auto;
+    }
+    .proj-tab {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: .95rem;
+      color: var(--muted); padding: 1rem 1.5rem 1rem; border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s; white-space: nowrap;
+    }
+    .proj-tab.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+    .proj-tab:hover:not(.active) { color: #CBD5E1; }
+
+    /* ── Slide viewer ── */
+    .slides-section { padding: 4rem 1.5rem 5rem; }
+    .slides-inner { max-width: 1280px; margin: 0 auto; }
+
+    .slide-viewer {
+      position: relative;
+    }
+
+    /* slide cards */
+    .slide-card {
+      display: none;
+      animation: slideIn 0.4s ease;
+    }
+    .slide-card.active { display: block; }
+    @keyframes slideIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    .slide-shell {
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+    .slide-titlebar {
+      padding: .75rem 1.25rem; background: rgba(0,0,0,0.4);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .slide-titlebar .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .slide-title-label { margin-left: .5rem; font-size: .75rem; color: var(--muted); font-family: 'DM Sans', sans-serif; }
+    .slide-body { padding: clamp(1.5rem,4vw,3rem); }
+
+    /* Slide layouts */
+    .s-hero { text-align: center; padding: clamp(2rem,5vw,4rem) clamp(1.5rem,4vw,3rem); }
+    .s-hero h2 { font-size: clamp(1.6rem,4vw,3rem); color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+    .s-hero p { color: var(--muted); max-width: 700px; margin: 0 auto; line-height: 1.75; font-size: clamp(.9rem,2vw,1.05rem); }
+
+    .s-two-col {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;
+    }
+    @media(max-width:680px){ .s-two-col{ grid-template-columns:1fr; gap:1.5rem; } }
+    .s-two-col h3 { font-size: clamp(1.1rem,2.5vw,1.6rem); color: #fff; margin-bottom: .75rem; }
+    .s-two-col p,.s-two-col li { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+
+    .s-three-col {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem;
+    }
+    @media(max-width:680px){ .s-three-col{ grid-template-columns:1fr; } }
+
+    .s-grid-2x2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; }
+    @media(max-width:500px){ .s-grid-2x2{ grid-template-columns:1fr; } }
+
+    .inner-card {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.25rem;
+    }
+    .inner-card h4 { font-size: .9rem; color: #fff; margin-bottom: .4rem; }
+    .inner-card p,.inner-card li { font-size: .8rem; color: var(--muted); line-height: 1.65; }
+    .inner-card .ic-icon { font-size: 1.75rem; margin-bottom: .75rem; }
+
+    .slide-label {
+      font-family: 'Syne',sans-serif; font-size: .65rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: .4rem;
+    }
+    .slide-h2 { font-size: clamp(1.3rem,3vw,2rem); color: #fff; margin-bottom: .75rem; line-height: 1.2; }
+    .slide-p { font-size: .875rem; color: var(--muted); line-height: 1.75; }
+
+    ul.check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .6rem; }
+    ul.check-list li { display: flex; align-items: flex-start; gap: .6rem; font-size: .83rem; color: var(--muted); }
+    ul.check-list li::before { content: '✓'; color: var(--cyan); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* navigation */
+    .slide-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1.25rem; flex-wrap: wrap; gap: .75rem;
+    }
+    .slide-nav-btns { display: flex; gap: .5rem; }
+    .snav-btn {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: border-color .2s, color .2s;
+    }
+    .snav-btn:hover { border-color: rgba(0,229,255,.4); color: #fff; }
+    .snav-btn:disabled { opacity: .3; cursor: default; }
+    .slide-dots { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .sdot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .sdot.active { background: var(--cyan); transform: scale(1.3); }
+    .slide-counter { font-size: .78rem; color: var(--muted); }
+
+    /* video */
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      background: #020508; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+    .video-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px; color: var(--muted);
+    }
+    .video-placeholder p { font-size: .8rem; text-align: center; max-width: 260px; line-height: 1.5; }
+
+    /* highlight bar */
+    .callout {
+      border-left: 3px solid var(--cyan); padding: 1rem 1.25rem;
+      background: rgba(0,229,255,.04); border-radius: 0 12px 12px 0;
+      font-size: .85rem; color: #94A3B8; font-style: italic; line-height: 1.65;
+    }
+
+    /* tech chips row */
+    .tech-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+
+    /* problem bar */
+    .problem-bar {
+      padding: 1.25rem; border-radius: 14px;
+      background: rgba(239,68,68,.04); border: 1px solid rgba(239,68,68,.12);
+    }
+    .problem-bar .pb-label { font-family:'Syne',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#F87171; margin-bottom:.75rem; }
+    .problem-bar .pb-item { display: flex; align-items: flex-start; gap: .75rem; font-size: .83rem; color: var(--muted); padding: .35rem 0; }
+    .problem-bar .pb-item span { font-size: 1.1rem; flex-shrink: 0; }
+
+    /* project selector (large) */
+    .proj-selector { padding: 3.5rem 1.5rem 0; }
+    .proj-selector-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    @media(max-width:600px){ .proj-selector-inner{ grid-template-columns:1fr; } }
+    .psel-card {
+      padding: 1.75rem; border-radius: 18px; cursor: pointer;
+      background: linear-gradient(var(--card),var(--card)) padding-box,
+                  linear-gradient(135deg,rgba(0,229,255,.15),rgba(10,132,255,.1),transparent) border-box;
+      border: 1px solid transparent; transition: transform .25s, box-shadow .25s;
+      text-decoration: none; display: block;
+    }
+    .psel-card.active-sel {
+      background: linear-gradient(var(--card),var(--card)) padding-box,
+                  linear-gradient(135deg,#00E5FF88,#0A84FF66) border-box;
+      box-shadow: 0 0 40px rgba(0,229,255,.1);
+    }
+    .psel-card:hover { transform: translateY(-3px); }
+    .psel-emoji { font-size: 2rem; margin-bottom: .75rem; }
+    .psel-name { font-family: 'Syne',sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: .25rem; }
+    .psel-sub { font-size: .78rem; color: var(--cyan); margin-bottom: .5rem; }
+    .psel-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+
+    /* section divider */
+    .sdivider { border: none; border-top: 1px solid var(--border); margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/home" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#04060D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="nav-logo-text">Clu<span>Core</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects" class="active">Projects</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="/home" onclick="toggleMenu()">Home</a>
+    <a href="/about" onclick="toggleMenu()">About</a>
+    <a href="/projects" class="active" onclick="toggleMenu()">Projects</a>
+    <a href="/contact" onclick="toggleMenu()">Contact</a>
+    <a href="/contact" class="mob-cta" onclick="toggleMenu()">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero dot-grid">
+  <div class="blob" style="width:500px;height:500px;top:-100px;left:-150px;background:radial-gradient(circle,rgba(0,229,255,0.09),transparent 70%)"></div>
+  <div class="page-hero-inner">
+    <span class="tag reveal">Our Work</span>
+    <h1 class="reveal" style="transition-delay:.1s">Flagship <span class="grad-text">Projects.</span></h1>
+    <p class="reveal" style="transition-delay:.18s">Two products, two missions — each solving a real problem with intelligent software. Browse the full story of each project below.</p>
+  </div>
+</section>
+
+<!-- PROJECT SELECTOR CARDS -->
+<div class="proj-selector">
+  <div class="proj-selector-inner">
+    <div class="psel-card active-sel reveal" onclick="switchProject('isllator')" id="sel-isllator">
+      <div class="psel-emoji">🤟</div>
+      <div class="psel-name">ISLLATOR</div>
+      <div class="psel-sub">India's First ISL Translator</div>
+      <div class="psel-desc">Real-time Indian Sign Language gesture-to-speech translation using computer vision and AI.</div>
+    </div>
+    <div class="psel-card reveal" onclick="switchProject('navigeye')" id="sel-navigeye" style="transition-delay:.08s">
+      <div class="psel-emoji">📍</div>
+      <div class="psel-name">NavigEye</div>
+      <div class="psel-sub">Smart GPS Transit Alarm · Android</div>
+      <div class="psel-desc">Never miss your stop — GPS-powered alerts that work even when the screen is off.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ISLLATOR PROJECT
+══════════════════════════════════════════════ -->
+<div id="proj-isllator" class="proj-section">
+  <hr class="sdivider" style="margin:3rem 0 0"/>
+
+  <!-- Tab nav for slides -->
+  <div style="background:rgba(8,14,26,.6);border-bottom:1px solid var(--border)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;gap:.5rem;overflow-x:auto">
+      <button class="proj-tab active" id="itab-0" onclick="goSlide('i',0)">Overview</button>
+      <button class="proj-tab" id="itab-1" onclick="goSlide('i',1)">Problem</button>
+      <button class="proj-tab" id="itab-2" onclick="goSlide('i',2)">How It Works</button>
+      <button class="proj-tab" id="itab-3" onclick="goSlide('i',3)">Technology</button>
+      <button class="proj-tab" id="itab-4" onclick="goSlide('i',4)">Challenges</button>
+      <button class="proj-tab" id="itab-5" onclick="goSlide('i',5)">Impact</button>
+    </div>
+  </div>
+
+  <!-- Slide Viewer -->
+  <section class="slides-section">
+    <div class="slides-inner">
+      <div class="slide-viewer" id="iviewer">
+
+        <!-- SLIDE 0 — Overview (Hero) -->
+        <div class="slide-card active" id="islide-0">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div>
+              <div class="dot" style="background:#FEBC2E"></div>
+              <div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 1 of 6 — Overview</span>
+            </div>
+            <div class="slide-body s-hero">
+              <span class="tag" style="margin-bottom:1.25rem;display:inline-block">Assistive Technology</span>
+              <h2>ISLLATOR<br/><span class="grad-text">Bridging the Communication Gap with Indian Sign Language Translation</span></h2>
+              <p style="margin-top:1.25rem">In India alone, over <strong style="color:#fff">1.64 million people</strong> live with a speech disability. Globally, speech and communication disorders impact an estimated 5–10% of the population. Individuals with such disabilities often encounter significant challenges, social barriers, and rejection in their daily lives due to limited means of communication.</p>
+              <p style="margin-top:1rem">To address this gap, we present <strong style="color:var(--cyan)">ISLLATOR</strong> — an innovative gesture-to-speech translator that empowers individuals with speech disabilities by enabling seamless, real-time communication.</p>
+              <div style="margin-top:2rem">
+                <div class="tech-row" style="justify-content:center">
+                  <span class="tech-pill">Python</span><span class="tech-pill">YOLO</span><span class="tech-pill">OpenCV</span><span class="tech-pill">pyttsx3</span><span class="tech-pill">Computer Vision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="idots"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('i')" id="i-prev" disabled>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button class="snav-btn" onclick="nextSlide('i')" id="i-next">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            <span class="slide-counter" id="i-counter">1 / 6</span>
+          </div>
+        </div>
+
+        <!-- SLIDE 1 — Problem -->
+        <div class="slide-card" id="islide-1">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 2 of 6 — The Problem</span>
+            </div>
+            <div class="slide-body">
+              <div class="s-two-col">
+                <div>
+                  <div class="slide-label">The Unspoken Challenge</div>
+                  <div class="slide-h2">Breaking Down Communication Barriers</div>
+                  <p class="slide-p" style="margin-bottom:1.25rem">Millions in India face daily communication barriers due to hearing impairments or non-verbal conditions. This leads to isolation and limits their participation in society.</p>
+                  <div class="problem-bar">
+                    <div class="pb-label">Access denied to:</div>
+                    <div class="pb-item"><span>📚</span><span>Quality education and learning environments</span></div>
+                    <div class="pb-item"><span>💼</span><span>Meaningful employment opportunities</span></div>
+                    <div class="pb-item"><span>🏥</span><span>Essential public services and healthcare</span></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="slide-label">ISLLATOR as a Solution</div>
+                  <div class="slide-h2">A Beacon of Hope</div>
+                  <div style="display:flex;flex-direction:column;gap:.9rem">
+                    <div class="inner-card">
+                      <h4>⚡ Real-time Translation</h4>
+                      <p>Converts ISL signs into spoken words or written text instantly — no delay.</p>
+                    </div>
+                    <div class="inner-card">
+                      <h4>♿ Enhanced Accessibility</h4>
+                      <p>Creates pathways for seamless interaction in diverse everyday settings.</p>
+                    </div>
+                    <div class="inner-card">
+                      <h4>💪 Empowerment</h4>
+                      <p>Fosters independence and fuller participation for the Deaf community.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="idots1"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('i')" id="i-prev1"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('i')" id="i-next1"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter" id="i-counter1">2 / 6</span>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 — How it Works -->
+        <div class="slide-card" id="islide-2">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 3 of 6 — How It Works</span>
+            </div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">System Architecture</div>
+                <div class="slide-h2">The ISLLATOR System</div>
+                <p class="slide-p" style="max-width:620px;margin:0 auto">ISLLATOR captures and processes Indian Sign Language gestures, translating them into immediate, understandable speech or text using a three-stage pipeline.</p>
+              </div>
+              <div class="s-three-col" style="margin-bottom:2rem">
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">📷</div>
+                  <h4>Gesture Capture</h4>
+                  <p>A standard camera detects and captures ISL signs performed by the user in real time.</p>
+                </div>
+                <div class="inner-card" style="text-align:center;border-color:rgba(0,229,255,.2)">
+                  <div class="ic-icon">🧠</div>
+                  <h4>Intelligent Processing</h4>
+                  <p>YOLO for gesture detection and OpenCV for image interpretation process each video frame.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">🔊</div>
+                  <h4>Real-time Output</h4>
+                  <p>Translated signs are instantly converted to spoken words via pyttsx3 or displayed as text.</p>
+                </div>
+              </div>
+
+              <!-- Video Demo -->
+              <div style="margin-bottom:1.5rem">
+                <div class="slide-label">Live Demo</div>
+                <div class="slide-h2" style="font-size:1.1rem;margin-bottom:.75rem">Watch ISLLATOR in Action</div>
+                <div class="video-wrap">
+                  <video controls preload="metadata" poster="">
+                    <source src="assets/video/isllator.mp4" type="video/mp4"/>
+               
+
+                  </video>
+                  <div class="video-placeholder" id="video-fallback">
+                    <svg width="48" height="48" fill="none" stroke="#00E5FF" stroke-width="1.4" viewBox="0 0 24 24" opacity=".45"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 8l6 4-6 4V8z"/></svg>
+                    <p>ISL Detection Demo Video<br/><span style="font-size:.7rem;opacity:.6"></span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="callout">What makes ISLLATOR unique is its status as <strong style="color:#CBD5E1">India's first dedicated ISL translator</strong> — supporting speech output for visually impaired educators and providing a comprehensive tool for communication.</div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="idots2"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">3 / 6</span>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 — Technology -->
+        <div class="slide-card" id="islide-3">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 4 of 6 — Technology</span>
+            </div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">Under the Hood</div>
+                <div class="slide-h2">Technology & Methodology</div>
+                <p class="slide-p" style="max-width:560px;margin:0 auto">ISLLATOR leverages a robust tech stack to deliver real-time translation. Each component plays a crucial role in transforming visual signs into audible language.</p>
+              </div>
+              <div class="s-two-col">
+                <div style="display:flex;flex-direction:column;gap:.85rem">
+                  <div class="inner-card">
+                    <h4>🐍 Python — The Foundation</h4>
+                    <p>Core programming language enabling rapid AI/ML development and seamless integration of all components.</p>
+                  </div>
+                  <div class="inner-card" style="border-color:rgba(0,229,255,.2)">
+                    <h4>👁️ YOLO — Gesture Detection</h4>
+                    <p>"You Only Look Once" — used for efficient, real-time detection of hand gestures and facial expressions with high accuracy.</p>
+                  </div>
+                  <div class="inner-card">
+                    <h4>🎥 OpenCV — Image Processing</h4>
+                    <p>Handles pre-processing of video frames, feature extraction from gestures, and sign interpretation.</p>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:.85rem">
+                  <div class="inner-card">
+                    <h4>🔊 pyttsx3 — Voice Output</h4>
+                    <p>A cross-platform text-to-speech library that converts translated ISL text into clear, audible speech.</p>
+                  </div>
+                  <div class="inner-card" style="border-color:rgba(0,229,255,.2)">
+                    <h4>🤖 AI Chatbot — ISL Learning</h4>
+                    <p>An intelligent chatbot integration that facilitates ISL learning, answers queries, and provides an interactive educational experience.</p>
+                  </div>
+                  <div style="padding:1.25rem;border-radius:14px;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.15)">
+                    <div class="slide-label" style="margin-bottom:.5rem">Integrated Approach</div>
+                    <p style="font-size:.8rem;color:var(--muted);line-height:1.65">This integrated architecture ensures a seamless, accurate translation experience while also providing a valuable learning resource for ISL education.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="idots3"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">4 / 6</span>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 — Challenges -->
+        <div class="slide-card" id="islide-4">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 5 of 6 — Challenges & Solutions</span>
+            </div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">Outlook</div>
+                <div class="slide-h2">Feasibility, Challenges & Solutions</div>
+              </div>
+              <div class="s-two-col">
+                <div>
+                  <div style="padding:1.25rem;border-radius:14px;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.15);margin-bottom:1rem">
+                    <div class="slide-label" style="margin-bottom:.6rem">Feasibility & Potential</div>
+                    <p style="font-size:.83rem;color:var(--muted);line-height:1.65">ISLLATOR's core technology is highly feasible, building upon well-established AI/ML tools. Rapid advancements in these fields provide a solid foundation for improvement.</p>
+                    <ul class="check-list" style="margin-top:.75rem">
+                      <li>Proven AI/ML models for high accuracy</li>
+                      <li>Compatible with widely available cameras</li>
+                      <li>Scalable architecture for larger datasets</li>
+                    </ul>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:.85rem">
+                  <div class="inner-card">
+                    <h4>🗺️ Regional ISL Variations</h4>
+                    <p><strong style="color:#94A3B8">Challenge:</strong> ISL has regional dialects affecting accuracy.<br/><strong style="color:var(--cyan)">Solution:</strong> Expand training datasets with diverse regional ISL signs and adaptive learning algorithms.</p>
+                  </div>
+                  <div class="inner-card">
+                    <h4>⚡ Real-time Accuracy & Latency</h4>
+                    <p><strong style="color:#94A3B8">Challenge:</strong> High accuracy with minimal latency.<br/><strong style="color:var(--cyan)">Solution:</strong> Optimize models for faster inference and explore edge computing.</p>
+                  </div>
+                  <div class="inner-card">
+                    <h4>📱 Hardware Dependency</h4>
+                    <p><strong style="color:#94A3B8">Challenge:</strong> Reliance on phones/computers for processing.<br/><strong style="color:var(--cyan)">Solution:</strong> Develop a dedicated portable offline device for wider accessibility.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="idots4"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">5 / 6</span>
+          </div>
+        </div>
+
+        <!-- SLIDE 5 — Impact -->
+        <div class="slide-card" id="islide-5">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 6 of 6 — Impact</span>
+            </div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">Transforming Lives</div>
+                <div class="slide-h2">ISLLATOR's Impact & Benefits</div>
+                <p class="slide-p" style="max-width:600px;margin:0 auto">ISLLATOR is more than a technological innovation — it's a catalyst for profound social and economic change, promising a more inclusive future for millions.</p>
+              </div>
+              <div class="s-three-col" style="gap:1rem">
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">🤝</div>
+                  <h4>Social Inclusion</h4>
+                  <p>Breaks barriers between Deaf individuals and the hearing community — enabling participation in everyday life.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">🎓</div>
+                  <h4>Educational Advancement</h4>
+                  <p>Enables seamless learning. Visually impaired educators leverage speech output to teach effectively.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">💼</div>
+                  <h4>Economic Opportunity</h4>
+                  <p>Opens employment avenues — making workplaces more accessible and diverse.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">🏥</div>
+                  <h4>Healthcare Accessibility</h4>
+                  <p>Ensures Deaf patients can clearly communicate needs in hospitals without interpreters.</p>
+                </div>
+                <div class="inner-card" style="text-align:center;grid-column:span 2" id="impact-span">
+                  <div class="ic-icon">📖</div>
+                  <h4>Promoting ISL Learning</h4>
+                  <p>An integrated interactive chatbot provides a platform for learning ISL — fostering greater understanding across communities. From schools to hospitals, ISLLATOR makes India more accessible for everyone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="idots5"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('i')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('i')" disabled style="opacity:.3;cursor:default"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">6 / 6</span>
+          </div>
+        </div>
+
+      </div><!-- /slide-viewer -->
+    </div>
+  </section>
+</div><!-- /proj-isllator -->
+
+<!-- ══════════════════════════════════════════════
+     NAVIGEYE PROJECT
+══════════════════════════════════════════════ -->
+<div id="proj-navigeye" class="proj-section" style="display:none">
+  <hr class="sdivider" style="margin:3rem 0 0"/>
+
+  <div style="background:rgba(8,14,26,.6);border-bottom:1px solid var(--border)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;gap:.5rem;overflow-x:auto">
+      <button class="proj-tab active" id="ntab-0" onclick="goSlide('n',0)">Overview</button>
+      <button class="proj-tab" id="ntab-1" onclick="goSlide('n',1)">Problem</button>
+      <button class="proj-tab" id="ntab-2" onclick="goSlide('n',2)">Solution</button>
+      <button class="proj-tab" id="ntab-3" onclick="goSlide('n',3)">Features</button>
+      <button class="proj-tab" id="ntab-4" onclick="goSlide('n',4)">Demo</button>
+      <button class="proj-tab" id="ntab-5" onclick="goSlide('n',5)">Conclusion</button>
+    </div>
+  </div>
+
+  <section class="slides-section">
+    <div class="slides-inner">
+      <div class="slide-viewer" id="nviewer">
+
+        <!-- N-SLIDE 0 — Overview -->
+        <div class="slide-card active" id="nslide-0">
+          <div class="slide-shell">
+            <div class="slide-titlebar">
+              <div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div>
+              <span class="slide-title-label">Slide 1 of 6 — Overview</span>
+            </div>
+            <div class="slide-body s-hero">
+              <span class="tag" style="margin-bottom:1.25rem;display:inline-block">Smart Mobility · Android</span>
+              <h2><span class="grad-text">NavigEye</span><br/>Smart Location-Based Alarm for Transit</h2>
+              <p style="margin-top:1.25rem"><strong style="color:#fff">Never miss your stop again</strong> — GPS-powered alerts that work even when you sleep. NavigEye automatically alerts you when approaching your destination, solving a daily problem for commuters and students across India.</p>
+              <div style="margin-top:1.5rem;display:inline-block;padding:.75rem 1.5rem;border-radius:12px;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.2)">
+                <span style="font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;color:var(--cyan)">NavigEye v1.0 — Available on Android</span>
+              </div>
+              <div style="margin-top:1.5rem">
+                <div class="tech-row" style="justify-content:center">
+                  <span class="tech-pill">Android</span><span class="tech-pill">GPS / Location API</span><span class="tech-pill">Voice TTS</span><span class="tech-pill">Background Service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="ndots0"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('n')" disabled style="opacity:.3;cursor:default"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">1 / 6</span>
+          </div>
+        </div>
+
+        <!-- N-SLIDE 1 — Problem -->
+        <div class="slide-card" id="nslide-1">
+          <div class="slide-shell">
+            <div class="slide-titlebar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="slide-title-label">Slide 2 of 6 — The Problem</span></div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">Why Commuters Miss Their Stop</div>
+                <div class="slide-h2">A Daily Problem with No Reliable Solution</div>
+              </div>
+              <div class="s-three-col">
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">😴</div>
+                  <h4>Falling Asleep</h4>
+                  <p>Long journeys cause passengers to doze off and miss their intended stop entirely.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">📱</div>
+                  <h4>Distraction</h4>
+                  <p>Mobile phones, music, and entertainment divert attention from route progress.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">🗺️</div>
+                  <h4>No Distance Awareness</h4>
+                  <p>Passengers have no real-time indication of how far they are from their destination.</p>
+                </div>
+              </div>
+              <div style="margin-top:1.5rem;padding:1.25rem;border-radius:14px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);text-align:center">
+                <p style="font-size:.9rem;color:#F87171;font-family:'Syne',sans-serif;font-weight:700">Result: Wasted time, extra travel costs, missed classes & appointments — a daily problem affecting millions of commuters and students.</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="ndots1"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">2 / 6</span>
+          </div>
+        </div>
+
+        <!-- N-SLIDE 2 — Solution -->
+        <div class="slide-card" id="nslide-2">
+          <div class="slide-shell">
+            <div class="slide-titlebar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="slide-title-label">Slide 3 of 6 — Proposed Solution</span></div>
+            <div class="slide-body">
+              <div class="s-two-col">
+                <div>
+                  <div class="slide-label">Proposed Solution</div>
+                  <div class="slide-h2">NavigEye — Smart Location-Based Alarm</div>
+                  <p class="slide-p" style="margin-bottom:1.25rem">NavigEye uses real-time GPS tracking to monitor your journey and automatically alerts you when approaching your destination — no manual attention needed.</p>
+                  <div style="display:flex;flex-direction:column;gap:.75rem">
+                    <div style="display:flex;align-items:flex-start;gap:.85rem">
+                      <div class="step-num" style="flex-shrink:0">1</div>
+                      <div><strong style="color:#fff;font-size:.875rem">Set Destination</strong><p style="font-size:.8rem;color:var(--muted);margin-top:.2rem">Via search, voice, or map pin</p></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:.85rem">
+                      <div class="step-num" style="flex-shrink:0">2</div>
+                      <div><strong style="color:#fff;font-size:.875rem">App Tracks in Background</strong><p style="font-size:.8rem;color:var(--muted);margin-top:.2rem">Works with screen off, no interaction needed</p></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:.85rem">
+                      <div class="step-num" style="flex-shrink:0">3</div>
+                      <div><strong style="color:#fff;font-size:.875rem">Distance Calculated</strong><p style="font-size:.8rem;color:var(--muted);margin-top:.2rem">Haversine formula gives real-time distance to destination</p></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:.85rem">
+                      <div class="step-num" style="flex-shrink:0">4</div>
+                      <div><strong style="color:#fff;font-size:.875rem">Multi-Alert Trigger on Arrival</strong><p style="font-size:.8rem;color:var(--muted);margin-top:.2rem">🔔 Alarm &nbsp;📳 Vibration &nbsp;🔊 Voice &nbsp;📱 Notification</p></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="callout" style="margin-bottom:1.25rem">"GPS-powered alerts that work <strong style="color:#CBD5E1">even when you sleep</strong> — NavigEye monitors your journey so you don't have to."</div>
+                  <div class="inner-card" style="text-align:center;padding:2rem">
+                    <div style="font-size:3rem;margin-bottom:.75rem">📍</div>
+                    <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:.35rem">Always Watching</div>
+                    <p style="font-size:.82rem;color:var(--muted)">NavigEye tracks your location continuously in the background, calculating distance to destination every few seconds.</p>
+                    <div style="margin-top:1rem;padding:.6rem 1rem;border-radius:8px;background:rgba(40,200,64,.1);border:1px solid rgba(40,200,64,.25);font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:#4ADE80">✅ REACHED! — Tracking Status: Green</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="ndots2"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">3 / 6</span>
+          </div>
+        </div>
+
+        <!-- N-SLIDE 3 — Features -->
+        <div class="slide-card" id="nslide-3">
+          <div class="slide-shell">
+            <div class="slide-titlebar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="slide-title-label">Slide 4 of 6 — Key Features</span></div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">App Walkthrough</div>
+                <div class="slide-h2">Key Features & App Screens</div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
+                <div class="inner-card">
+                  <h4>🏠 Home Dashboard</h4>
+                  <p>Clean main screen showing current tracking status, distance to destination, and quick-access controls.</p>
+                </div>
+                <div class="inner-card">
+                  <h4>🎙️ Voice Input Support</h4>
+                  <p>Speak your stop name — NavigEye understands and sets the destination hands-free.</p>
+                </div>
+                <div class="inner-card">
+                  <h4>🗺️ Map Pin Selection</h4>
+                  <p>Visually confirm destination by dropping a pin on the interactive map.</p>
+                </div>
+                <div class="inner-card">
+                  <h4>💾 Saved Destinations</h4>
+                  <p>Save frequently used stops for one-tap activation on repeat journeys.</p>
+                </div>
+                <div class="inner-card">
+                  <h4>⏱️ Refresh Interval</h4>
+                  <p>Configurable GPS refresh rate from 2 seconds to 30 minutes — balance battery vs accuracy.</p>
+                </div>
+                <div class="inner-card">
+                  <h4>🔒 Lock Screen Alerts</h4>
+                  <p>Live updates on the notification bar and lock screen — no need to unlock the phone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="ndots3"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">4 / 6</span>
+          </div>
+        </div>
+
+        <!-- N-SLIDE 4 — Demo -->
+        <div class="slide-card" id="nslide-4">
+          <div class="slide-shell">
+            <div class="slide-titlebar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="slide-title-label">Slide 5 of 6 — Live Demo</span></div>
+            <div class="slide-body">
+              <div style="text-align:center;margin-bottom:2rem">
+                <div class="slide-label">Live Demonstration</div>
+                <div class="slide-h2">Alarm in Action</div>
+              </div>
+              <div class="s-three-col">
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">🔍</div>
+                  <h4>Step 1: Search Destination</h4>
+                  <p>Type or speak your stop name — the app resolves it to GPS coordinates instantly.</p>
+                </div>
+                <div class="inner-card" style="text-align:center;border-color:rgba(0,229,255,.25)">
+                  <div class="ic-icon">📌</div>
+                  <h4>Step 2: Pin on Map</h4>
+                  <p>Visually confirm your destination by viewing the pin on the map before starting tracking.</p>
+                </div>
+                <div class="inner-card" style="text-align:center">
+                  <div class="ic-icon">✅</div>
+                  <h4>Step 3: Reached!</h4>
+                  <p>Alert fires automatically — Tracking Status turns green. Distance shows 1 m.</p>
+                </div>
+              </div>
+              <div style="margin-top:1.5rem;padding:1.25rem;border-radius:14px;background:rgba(40,200,64,.06);border:1px solid rgba(40,200,64,.2);text-align:center">
+                <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#4ADE80;margin-bottom:.4rem">✅ REACHED! — Notification + Voice Alert fires automatically.</div>
+                <p style="font-size:.82rem;color:var(--muted)">Tracking Status turns green · Distance: 1 m · Multi-alert system activates simultaneously</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="ndots4"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">5 / 6</span>
+          </div>
+        </div>
+
+        <!-- N-SLIDE 5 — Conclusion -->
+        <div class="slide-card" id="nslide-5">
+          <div class="slide-shell">
+            <div class="slide-titlebar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="slide-title-label">Slide 6 of 6 — Conclusion</span></div>
+            <div class="slide-body">
+              <div class="s-two-col">
+                <div>
+                  <div class="slide-label">What We Built</div>
+                  <div class="slide-h2">NavigEye Delivers.</div>
+                  <p class="slide-p" style="margin-bottom:1.25rem">A practical, tested solution that solves a real daily problem for commuters and students across India.</p>
+                  <ul class="check-list">
+                    <li>Real-time GPS tracking with background operation</li>
+                    <li>Multi-alert system: sound, vibration, voice & notifications</li>
+                    <li>3 ways to set destination: search, voice, map pin</li>
+                    <li>Configurable refresh intervals (2 sec – 30 min)</li>
+                    <li>Saved alarms for repeated journeys</li>
+                    <li>Lock screen & notification bar live updates</li>
+                  </ul>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start">
+                  <div class="inner-card" style="width:100%">
+                    <h4>🎯 Target Users</h4>
+                    <p>Students, daily commuters, and anyone who travels on buses, trains, or metro — especially those who fall asleep or get distracted on long routes.</p>
+                  </div>
+                  <div class="inner-card" style="width:100%;border-color:rgba(0,229,255,.25)">
+                    <h4>📱 Platform</h4>
+                    <p>NavigEye v1.0 is available on <strong style="color:var(--cyan)">Android</strong> — ideal for the Indian commuter who primarily uses Android devices.</p>
+                  </div>
+                  <div style="padding:1rem 1.25rem;border-radius:12px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);width:100%">
+                    <p style="font-size:.82rem;color:#94A3B8;font-style:italic">"Ideal for students &amp; daily commuters — NavigEye v1.0"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="ndots5"></div>
+            <div class="slide-nav-btns">
+              <button class="snav-btn" onclick="prevSlide('n')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+              <button class="snav-btn" onclick="nextSlide('n')" disabled style="opacity:.3;cursor:default"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <span class="slide-counter">6 / 6</span>
+          </div>
+        </div>
+
+      </div><!-- /nviewer -->
+    </div>
+  </section>
+</div><!-- /proj-navigeye -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/home" class="nav-logo">
+      <div class="nav-logo-icon" style="width:28px;height:28px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#04060D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="nav-logo-text" style="font-size:.95rem">Clu<span>Core</span></span>
+    </a>
+    <div class="footer-links">
+      <a href="/home">Home</a><a href="/about">About</a><a href="/projects">Projects</a><a href="/contact">Contact</a>
+    </div>
+    <span class="footer-copy">© 2025 CluCore Technology. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  /* ── Project switcher ── */
+  function switchProject(id) {
+    document.querySelectorAll('.proj-section').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.psel-card').forEach(c => c.classList.remove('active-sel'));
+    document.getElementById('proj-' + id).style.display = 'block';
+    document.getElementById('sel-' + id).classList.add('active-sel');
+    document.getElementById('proj-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ── Slide system ── */
+  const SLIDE_COUNTS = { i: 6, n: 6 };
+  const currentSlide = { i: 0, n: 0 };
+
+  function goSlide(proj, idx) {
+    const count = SLIDE_COUNTS[proj];
+    const old = currentSlide[proj];
+    if (old === idx) return;
+
+    document.getElementById((proj === 'i' ? 'i' : 'n') + 'slide-' + old).classList.remove('active');
+    document.getElementById((proj === 'i' ? 'i' : 'n') + 'slide-' + idx).classList.add('active');
+
+    // tabs
+    document.getElementById((proj === 'i' ? 'i' : 'n') + 'tab-' + old).classList.remove('active');
+    document.getElementById((proj === 'i' ? 'i' : 'n') + 'tab-' + idx).classList.add('active');
+
+    currentSlide[proj] = idx;
+  }
+
+  function nextSlide(proj) {
+    const next = currentSlide[proj] + 1;
+    if (next < SLIDE_COUNTS[proj]) goSlide(proj, next);
+  }
+  function prevSlide(proj) {
+    const prev = currentSlide[proj] - 1;
+    if (prev >= 0) goSlide(proj, prev);
+  }
+
+  /* Handle #hash on load */
+  window.addEventListener('DOMContentLoaded', () => {
+    if (location.hash === '#navigeye') switchProject('navigeye');
+  });
+
+  /* Hide video fallback if video loads */
+  document.querySelectorAll('video').forEach(v => {
+    v.addEventListener('loadeddata', () => {
+      const fb = v.parentElement.querySelector('.video-placeholder');
+      if (fb) fb.style.display = 'none';
+    });
+  });
+
+  /* Responsive: remove span-2 on mobile */
+  function checkImpactSpan() {
+    const el = document.getElementById('impact-span');
+    if (!el) return;
+    el.style.gridColumn = window.innerWidth < 500 ? 'span 1' : 'span 2';
+  }
+  checkImpactSpan();
+  window.addEventListener('resize', checkImpactSpan);
+</script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CluCore Technology | AI & Software Innovation</title>
+  <meta name="description" content="CluCore Technology is an AI-powered software startup building real-world solutions — ISLLATOR (Indian Sign Language Translator) and NavigEye (Smart GPS Transit Alarm)."/>
+  <meta name="keywords" content="CluCore Technology, AI startup India, software startup, ISLLATOR, NavigEye, machine learning, assistive technology, Indian Sign Language"/>
+  <meta name="author" content="CluCore Technology"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.clucoretechnology.in/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="CluCore Technology | AI & Software Innovation"/>
+  <meta property="og:description" content="Building AI-powered software that solves real-world problems — ISLLATOR & NavigEye."/>
+  <meta property="og:url" content="https://www.clucoretechnology.in/"/>
+  <meta property="og:site_name" content="CluCore Technology"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="CluCore Technology"/>
+  <meta name="twitter:description" content="AI-powered solutions for real-world problems."/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CluCore Technology","url":"https://www.clucoretechnology.in","email":"clucoretechnology@gmail.com","description":"AI-powered software startup building assistive and mobility solutions.","foundingLocation":"India"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1280px; margin: 0 auto; padding: 8rem 1.5rem 5rem;
+      position: relative; z-index: 1; width: 100%;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 7rem);
+      line-height: 1.04; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 1.5rem;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted); max-width: 580px;
+      line-height: 1.75; margin-bottom: 2.5rem;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 4rem; }
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      align-items: center;
+    }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.9rem; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .stat-divider { width: 1px; height: 40px; background: var(--border); }
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      opacity: 0.4;
+    }
+    .scroll-hint span { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--muted), transparent); animation: scrollpulse 2s ease-in-out infinite; }
+    @keyframes scrollpulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ── About strip ── */
+    .about-strip { padding: 5rem 1.5rem; position: relative; }
+    .about-strip-inner { max-width: 1280px; margin: 0 auto; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem; margin-top: 3rem;
+    }
+    .value-card { padding: 1.75rem; }
+    .value-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .value-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.4rem; }
+    .value-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── Projects strip ── */
+    .projects-strip { padding: 5rem 1.5rem; position: relative; }
+    .projects-strip-inner { max-width: 1280px; margin: 0 auto; }
+    .proj-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .proj-card { padding: 2rem; position: relative; overflow: hidden; text-decoration: none; display: block; }
+    .proj-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,229,255,0.04), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .proj-card:hover::after { opacity: 1; }
+    .proj-badge { font-size: 2.5rem; margin-bottom: 1rem; }
+    .proj-card h3 { font-size: 1.5rem; color: #fff; margin-bottom: 0.35rem; }
+    .proj-card .proj-tagline { font-size: 0.8rem; color: var(--cyan); margin-bottom: 0.75rem; font-weight: 500; }
+    .proj-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.5rem; }
+    .proj-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700;
+      color: var(--cyan); text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .proj-card:hover .proj-link { gap: 10px; }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      padding: 5rem 1.5rem;
+      position: relative;
+    }
+    .cta-box {
+      max-width: 860px; margin: 0 auto;
+      background: linear-gradient(135deg, rgba(0,229,255,0.06), rgba(10,132,255,0.04));
+      border: 1px solid rgba(0,229,255,0.18);
+      border-radius: 28px; padding: clamp(2.5rem,6vw,4rem);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-box::before {
+      content: ''; position: absolute;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.08), transparent);
+      top: -80px; right: -80px; pointer-events: none;
+    }
+    .cta-box h2 { font-size: clamp(1.8rem,4vw,3rem); color: #fff; margin-bottom: 1rem; }
+    .cta-box p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+    @media (max-width: 640px) {
+      .stat-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/home" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#04060D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="nav-logo-text">Clu<span>Core</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="active">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="/home" class="active" onclick="toggleMenu()">Home</a>
+    <a href="/about" onclick="toggleMenu()">About</a>
+    <a href="/projects" onclick="toggleMenu()">Projects</a>
+    <a href="/contact" onclick="toggleMenu()">Contact</a>
+    <a href="/contact" class="mob-cta" onclick="toggleMenu()">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero dot-grid">
+  <div class="blob w600 h600" style="width:600px;height:600px;top:-200px;left:-200px;background:radial-gradient(circle,rgba(0,229,255,0.11),transparent 70%)"></div>
+  <div class="blob" style="width:500px;height:500px;bottom:-150px;right:-150px;background:radial-gradient(circle,rgba(10,132,255,0.09),transparent 70%)"></div>
+  <div class="hero-inner">
+    <div class="tag reveal">Est. 2024 · India</div>
+    <h1 class="reveal" style="transition-delay:.1s">
+      We Build<br/>
+      <span class="grad-text glow">Intelligent</span><br/>
+      Software.
+    </h1>
+    <p class="hero-sub reveal" style="transition-delay:.18s">
+      CluCore Technology is a product-first startup at the intersection of AI, assistive tech, and smart mobility — turning real-world problems into elegant software.
+    </p>
+    <div class="hero-ctas reveal" style="transition-delay:.26s">
+      <a href="/projects" class="btn-primary">
+        Explore Projects
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="/about" class="btn-outline">Learn About Us</a>
+    </div>
+    <div class="hero-stats reveal" style="transition-delay:.34s">
+      <div class="stat-item">
+        <span class="stat-num">2+</span>
+        <span class="stat-label">Major Products</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">1.64M+</span>
+        <span class="stat-label">Lives We Target</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">Real-time</span>
+        <span class="stat-label">AI Processing</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="about-strip-inner">
+    <div class="section-header reveal">
+      <span class="tag">Who We Are</span>
+      <h2>Technology With <span class="grad-text">Purpose.</span></h2>
+      <p>We build AI-powered products that solve genuine societal challenges — from breaking communication barriers to ensuring commuters never miss their stop.</p>
+    </div>
+    <div class="values-grid">
+      <div class="card value-card reveal">
+        <div class="value-icon" style="background:rgba(0,229,255,0.1)">
+          <svg width="20" height="20" fill="none" stroke="#00E5FF" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Real-time AI</h3>
+        <p>Low-latency ML inference built for live use, not just lab demos.</p>
+      </div>
+      <div class="card value-card reveal" style="transition-delay:.08s">
+        <div class="value-icon" style="background:rgba(0,229,255,0.1)">
+          <svg width="20" height="20" fill="none" stroke="#00E5FF" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Inclusivity First</h3>
+        <p>Assistive technology that empowers underserved communities.</p>
+      </div>
+      <div class="card value-card reveal" style="transition-delay:.16s">
+        <div class="value-icon" style="background:rgba(10,132,255,0.1)">
+          <svg width="20" height="20" fill="none" stroke="#0A84FF" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>Impact-Driven</h3>
+        <p>Every product is built to solve a verified, real-world problem.</p>
+      </div>
+      <div class="card value-card reveal" style="transition-delay:.24s">
+        <div class="value-icon" style="background:rgba(10,132,255,0.1)">
+          <svg width="20" height="20" fill="none" stroke="#0A84FF" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3>Scalable Stack</h3>
+        <p>Architectures designed to grow from prototype to production.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="/about" class="btn-outline">Read More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS STRIP -->
+<section class="projects-strip dot-grid">
+  <div class="blob" style="width:600px;height:600px;top:0;right:-200px;background:radial-gradient(circle,rgba(0,229,255,0.07),transparent 70%)"></div>
+  <div class="projects-strip-inner" style="position:relative;z-index:1">
+    <div class="section-header reveal">
+      <span class="tag">Our Work</span>
+      <h2>Flagship <span class="grad-text">Projects</span></h2>
+      <p>Two products. Two missions. Both solving real problems with intelligent software.</p>
+    </div>
+    <div class="proj-cards">
+      <a href="/projects#isllator" class="card proj-card reveal">
+        <div class="proj-badge">🤟</div>
+        <h3>ISLLATOR</h3>
+        <div class="proj-tagline">India's First ISL Translator</div>
+        <p>Real-time Indian Sign Language gesture-to-speech translation powered by computer vision — empowering 1.64 million speech-disabled individuals in India.</p>
+        <div class="proj-link">
+          View Project
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </a>
+      <a href="/projects#navigeye" class="card proj-card reveal" style="transition-delay:.1s">
+        <div class="proj-badge">📍</div>
+        <h3>NavigEye</h3>
+        <div class="proj-tagline">Smart GPS Transit Alarm · Android</div>
+        <p>Never miss your stop again — GPS-powered alerts that fire even when your screen is off, designed for commuters and students on the go.</p>
+        <div class="proj-link">
+          View Project
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-box reveal">
+    <span class="tag" style="margin-bottom:1.25rem;display:inline-block">Let's Connect</span>
+    <h2>Ready to Build Something <span class="grad-text">Together?</span></h2>
+    <p>Whether you're looking to collaborate, invest, or just say hello — we'd love to hear from you.</p>
+    <div class="cta-btns">
+      <a href="/contact" class="btn-primary">
+        Contact Us
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="/projects" class="btn-outline">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/home" class="nav-logo" style="text-decoration:none">
+      <div class="nav-logo-icon" style="width:28px;height:28px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#04060D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="nav-logo-text" style="font-size:.95rem">Clu<span>Core</span></span>
+    </a>
+    <div class="footer-links">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <span class="footer-copy">© 2025 CluCore Technology. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
